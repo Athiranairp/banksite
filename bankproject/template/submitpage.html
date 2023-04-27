@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if messages %}
+<div class="container">
+<ul class="messages">
+{% for message in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
+<div class="container">
+    <p class="text-center">
+        <a class="btn btn-primary" href="{% url 'base' %}">Return to Home Page</a>
+    </p>
+</div>
+
+</body>
+</html>

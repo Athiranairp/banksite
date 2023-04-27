@@ -1,0 +1,9 @@
+<h1>{{ district.name }}</h1>
+
+<ul>
+{% for branch in branches %}
+    <li>{{ branch.name }}</li>
+{% empty %}
+    <li>No branches found.</li>
+{% endfor %}
+</ul>

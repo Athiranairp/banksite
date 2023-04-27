@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Template</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="district">Select a district:</label>
+        <select name="district" id="district">
+            <option value="">--Select a district--</option>
+            {% for district in districts %}
+                <option value="{{ district.id }}">{{ district.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="branch">Select a branch:</label>
+        <select name="branch" id="branch">
+            <option value="">--Select a branch--</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
